@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
 </head>
 <body>
   <div id="vis"/>
@@ -14,7 +17,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ebin0002/fit3179week10/refs/heads/main/STE_2016_AUST.topojson",
     "format": {"type": "topojson", "feature": "STE_2016_AUST"}
-    },
+  },
   "transform": [
     {
       "lookup": "properties.STE_NAME16",
@@ -25,20 +28,19 @@
         "key": "State",
         "fields": ["Percentage"]
       }
-    },
+    }
   ],
   "mark": {"type": "geoshape", "stroke": "black"},
   "encoding": {
-    "color": {
-      "field": "Percentage",
-      "type": "quantitative"
-    },
+    "color": {"field": "Percentage", "type": "quantitative"},
     "tooltip": [
       {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
       {"field": "Percentage", "type": "quantitative"}
     ]
-  }
-}
+  },
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
   </script>
 </body>
 </html>
