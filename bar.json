@@ -3,8 +3,8 @@
     "title": "Vape use by age and state",
     "height": 250,
     "params": [{ 
-      "name": "State",
-      "bind": {"input": "select", "options": [null, "Australia", "New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Australian Capital Territory", "Northern Territory"]}
+      "name": "State", "value": "Australia",
+      "bind": {"input": "select", "options": ["Australia", "New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Australian Capital Territory", "Northern Territory"]}
     }],
     "data": {"url": "bardata.csv"},
     "transform": [{
