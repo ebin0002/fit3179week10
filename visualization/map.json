@@ -13,7 +13,7 @@
       "lookup": "properties.STE_NAME16",
       "from": {
         "data": {
-          "url": "data.csv"
+          "url": "mapdata.csv"
         },
         "key": "State",
         "fields": ["Percentage"]

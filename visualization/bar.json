@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Vape use by age and state",
+    "height": 250,
+    "params": [{ 
+      "name": "State",
+      "bind": {"input": "select", "options": [null, "Australia", "New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Australian Capital Territory", "Northern Territory"]}
+    }],
+    "data": {"url": "bardata.csv"},
+    "transform": [{
+        "filter": {
+            "field": "State",
+            "equal": {"expr": "State"}
+        }
+    }],
+    "mark": "bar",
+    "encoding": {
+        "x": {"field": "Age Group", "type": "nominal"},
+        "y": {"field": "Percentage", "type": "quantitative"},
+        "tooltip": [
+            {"field": "Age Group", "type": "nominal"},
+            {"field": "Percentage", "type": "quantitative"}
+        ]
+    }
+  }
